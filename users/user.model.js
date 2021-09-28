@@ -10,7 +10,7 @@ function model(sequelize) {
         cpf: { type: DataTypes.STRING, allowNull: false },
         rg: { type: DataTypes.STRING, allowNull: false },
         telefone: { type: DataTypes.STRING, allowNull: false },
-        tipoUsuario: { type: DataTypes.STRING, allowNull: false },
+        tipoUsuario: { type: DataTypes.INTEGER, allowNull: false },
         login: { type: DataTypes.STRING, allowNull: false },
         senha: { type: DataTypes.STRING, allowNull: false },
         hash: { type: DataTypes.STRING, allowNull: false }

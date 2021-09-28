@@ -18,7 +18,6 @@ async function authenticate({ login, senha }) {
     if (!user || !(await bcrypt.compare(senha, user.hash)))
         throw 'Login ou senha estão errados!';
 
-    // authentication successful
     const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '7d' });
     return { ...omitHash(user.get()), token };
 }
@@ -32,35 +31,33 @@ async function getById(id) {
 }
 
 async function create(payload) {
-    // validate
     if (await db.User.findOne({ where: { login: payload.login, cpf: payload.cpf, rg: payload.rg } })) {
         throw 'Funcionário já cadastrado!';
     }
 
-    // hash password
+    if(await typeUserExists(payload.tipoUsuario)) {        
+        throw 'Tipo de usuário não existe!';
+    }
+
     if (payload.senha) {
         payload.hash = await bcrypt.hash(payload.senha, 10);
     }
 
-    // save user
     await db.User.create(payload);
 }
 
 async function update(id, payload) {
     const user = await getUser(id);
 
-    // validate
     const loginAlterado = payload.login && user.login !== payload.login;
     if (loginAlterado && await db.User.findOne({ where: { login: payload.login } })) {
         throw 'O login "' + payload.login + '" já existe!';
     }
 
-    // hash password if it was entered
     if (payload.senha) {
         payload.hash = await bcrypt.hash(payload.senha, 10);
     }
 
-    // copy payload to user and save
     Object.assign(user, payload);
     await user.save();
 
@@ -72,8 +69,6 @@ async function _delete(id) {
     await user.destroy();
 }
 
-// helper functions
-
 async function getUser(id) {
     const user = await db.User.findByPk(id);
     if (!user) throw 'Usuário não encontrado!';
@@ -83,4 +78,14 @@ async function getUser(id) {
 function omitHash(user) {
     const { hash, ...userWithoutHash } = user;
     return userWithoutHash;
+}
+
+function typeUserExists(id) {
+    return db.TypeUser.count({ where: { id: id } })
+      .then(count => {
+        if (count != 0) {
+          return false;
+        }
+        return true;
+    });
 }

@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/users', require('./users/users.controller'));
+app.use('/type-users', require('./typeUser/typeUsers.controller'));
 
 app.use(errorHandler);
 

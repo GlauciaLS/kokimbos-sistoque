@@ -37,7 +37,7 @@ function registerSchema(req, res, next) {
         cpf: Joi.string().required(),
         rg: Joi.string().required(),
         telefone: Joi.string().required(),
-        tipoUsuario: Joi.string().required(),
+        tipoUsuario: Joi.number().required(),
         login: Joi.string().required(),
         senha: Joi.string().min(6).required()
     });
@@ -46,7 +46,7 @@ function registerSchema(req, res, next) {
 
 function register(req, res, next) {
     userService.create(req.body)
-        .then(() => res.json({ message: 'Registration successful' }))
+        .then(() => res.json({ message: 'Cadastrado com sucesso!' }))
         .catch(next);
 }
 
@@ -74,7 +74,7 @@ function updateSchema(req, res, next) {
         cpf: Joi.string().empty(),
         rg: Joi.string().empty(),
         telefone: Joi.string().empty(),
-        tipoUsuario: Joi.string().empty(),
+        tipoUsuario: Joi.number().empty(),
         login: Joi.string().empty(),
         senha: Joi.string().min(6).empty()
     });
@@ -89,6 +89,6 @@ function update(req, res, next) {
 
 function _delete(req, res, next) {
     userService.delete(req.params.id)
-        .then(() => res.json({ message: 'User deleted successfully' }))
+        .then(() => res.json({ message: 'Usuário deletado com sucesso!' }))
         .catch(next);
 }
