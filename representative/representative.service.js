@@ -20,8 +20,8 @@ async function getById(id) {
 }
 
 async function create(payload) {
-    const unvalidRepresentative = await representativeAlreadyExists(payload);
-    if (unvalidRepresentative) {
+    const unvalidPayload = await representativeAlreadyExists(payload);
+    if (unvalidPayload) {
         throw new Error('Representante já cadastrado!');
     }  
 

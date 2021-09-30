@@ -17,6 +17,7 @@ async function initialize() {
     db.TypeUser = require('../typeUser/typeUser.model')(sequelize);
     db.Provider = require('../provider/provider.model')(sequelize);
     db.Representative = require('../representative/representative.model')(sequelize);
+    db.Category = require('../category/category.model')(sequelize);
 
     await sequelize.sync();
     
