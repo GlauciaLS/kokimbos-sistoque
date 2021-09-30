@@ -11,6 +11,8 @@ app.use(cors());
 
 app.use('/users', require('./users/users.controller'));
 app.use('/type-users', require('./typeUser/typeUsers.controller'));
+app.use('/representatives', require('./representative/representatives.controller'));
+app.use('/providers', require('./provider/providers.controller'));
 
 app.use(errorHandler);
 
