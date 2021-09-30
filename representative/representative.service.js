@@ -20,7 +20,8 @@ async function getById(id) {
 }
 
 async function create(payload) {
-    if (!representativeAlreadyExists(payload)) {
+    const unvalidRepresentative = await representativeAlreadyExists(payload);
+    if (unvalidRepresentative) {
         throw new Error('Representante já cadastrado!');
     }  
 
@@ -30,9 +31,9 @@ async function create(payload) {
 async function update(id, payload) {
     const representative = await getRepresentative(id);
 
-    const representativeUpdated = payload.celular && representative.celular !== payload.celular;
+    const unvalidPayload = await unvalidRepresentative(representative, payload);
     
-    if (representativeUpdated && !representativeAlreadyExists) {
+    if (unvalidPayload) {
         throw new Error('O celular "' + payload.celular + '" já está cadastrado!');
     }
 
@@ -53,8 +54,20 @@ async function getRepresentative(id) {
     return representative;
 }
 
-function representativeAlreadyExists(representative) {
-    const representativeFound = db.Representative.findOne({ where: { celular: representative.celular } });
+async function representativeAlreadyExists(representative) {
+    const representativeFound = await db.Representative.findOne({ where: { celular: representative.celular } });
     
-    return representativeFound === null ? false : true;
+    if(representativeFound) {
+        return true;
+    }
+
+    return false;
+}
+
+async function unvalidRepresentative(representative, payload) {
+    if(payload.celular && representative.celular !== payload.celular) {
+        return await representativeAlreadyExists(payload);
+    }
+
+    return false;
 }
