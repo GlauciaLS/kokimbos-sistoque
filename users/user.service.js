@@ -1,4 +1,5 @@
-﻿const config = require('config.json');
+﻿const Sequelize = require('sequelize');
+const config = require('config.json');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const db = require('_helpers/db');
@@ -16,7 +17,7 @@ async function authenticate({ login, senha }) {
     const user = await db.User.scope('withHash').findOne({ where: { login } });
 
     if (!user || !(await bcrypt.compare(senha, user.hash)))
-        throw 'Login ou senha estão errados!';
+        throw new Error('Login ou senha estão errados!');
 
     const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '7d' });
     return { ...omitHash(user.get()), token };
@@ -31,12 +32,18 @@ async function getById(id) {
 }
 
 async function create(payload) {
-    if (await db.User.findOne({ where: { login: payload.login, cpf: payload.cpf, rg: payload.rg } })) {
-        throw 'Funcionário já cadastrado!';
+    if (await db.User.findOne({ where: { 
+        [Sequelize.Op.or]: [
+            { login: payload.login },
+            { cpf: payload.cpf },
+            { rg: payload.rg }
+        ]
+    } })) {
+        throw new Error('Funcionário já cadastrado! Verifique o login, CPF e RG informados.');
     }
 
     if(await typeUserExists(payload.tipoUsuario)) {        
-        throw 'Tipo de usuário não existe!';
+        throw new Error('Tipo de usuário não existe!');
     }
 
     if (payload.senha) {
@@ -50,8 +57,14 @@ async function update(id, payload) {
     const user = await getUser(id);
 
     const loginAlterado = payload.login && user.login !== payload.login;
-    if (loginAlterado && await db.User.findOne({ where: { login: payload.login } })) {
-        throw 'O login "' + payload.login + '" já existe!';
+    if (loginAlterado && await db.User.findOne({ where: { 
+        [Sequelize.Op.or]: [
+            { login: payload.login },
+            { cpf: payload.cpf },
+            { rg: payload.rg }
+        ]
+    } })) {
+        throw new Error('Esse usuário já existe! Verifique o login, CPF e RG informados.');
     }
 
     if (payload.senha) {
@@ -71,7 +84,7 @@ async function _delete(id) {
 
 async function getUser(id) {
     const user = await db.User.findByPk(id);
-    if (!user) throw 'Usuário não encontrado!';
+    if (!user) throw new Error('Usuário não encontrado!');
     return user;
 }
 
