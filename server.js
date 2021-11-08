@@ -15,6 +15,7 @@ app.use('/representatives', require('./representative/representatives.controller
 app.use('/providers', require('./provider/providers.controller'));
 app.use('/categories', require('./category/categories.controller'))
 app.use('/products', require('./product/products.controller'));
+app.use('/recipes', require('./recipe/recipes.controller'))
 
 app.use(errorHandler);
 
