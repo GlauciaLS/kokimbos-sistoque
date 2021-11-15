@@ -21,6 +21,7 @@ async function initialize() {
     db.Product = require('../product/product.model')(sequelize);
     db.Recipe = require('../recipe/recipe.model')(sequelize);
     db.RecipeProduct = require('../recipe-product/recipe-product.model')(sequelize);
+    db.Inventory = require('../inventory/inventory.model')(sequelize);
 
     await sequelize.sync();
     
