@@ -3,6 +3,7 @@ const db = require('_helpers/db');
 module.exports = {
     getAll,
     getById,
+    getByCategoryId,
     create,
     update,
     delete: _delete
@@ -25,9 +26,31 @@ async function getById(id) {
     return await getRecipeProducts(recipe);
 }
 
+async function getByCategoryId(id) {
+    const recipeCategoryExists = await findRecipeCategory(id);
+    if(!recipeCategoryExists) {
+        throw new Error('Tipo de receita não encontrada!');
+    }
+
+    var returnList = [];
+    let recipes = await db.Recipe.findAll({ where: { categoriaReceita: id }});
+
+    for(let recipe of recipes) {
+        let recipeMapped = await getRecipeProducts(recipe);
+        returnList.push(recipeMapped); 
+    }
+
+    return returnList;
+}
+
 async function create(payload) {
     if (await db.Recipe.findOne({ where: { nome: payload.nome } })) {
         throw new Error('Receita já cadastrada!');
+    }
+
+    const recipeCategoryExists = await findRecipeCategory(payload.categoriaReceita);
+    if(!recipeCategoryExists) {
+        throw new Error('Tipo de receita não encontrada!');
     }
 
     const produtos = payload.produtos;
@@ -51,6 +74,12 @@ async function create(payload) {
 }
 
 async function update(id, payload) {
+
+    const recipeCategoryExists = await findRecipeCategory(payload.categoriaReceita);
+    if(!recipeCategoryExists) {
+        throw new Error('Tipo de receita não encontrada!');
+    }
+
     const recipe = await getRecipe(id);
 
     const recipeChanged = payload.nome && recipe.nome !== payload.nome;
@@ -164,4 +193,14 @@ async function updateRecipeProducts(id, recipe) {
     }    
 
     return recipeReturn;
+}
+
+async function findRecipeCategory(id) {
+    const count = await db.RecipeCategory.count({ where: { id: id } });
+
+    if (count != 0) {
+        return true;
+    }
+
+    return false;
 }

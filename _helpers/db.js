@@ -1,5 +1,4 @@
 const config = require('config.json');
-const { Pool, Client } = require('pg');
 const { Sequelize } = require('sequelize');
 
 module.exports = db = {};
@@ -22,11 +21,11 @@ async function initialize() {
     db.Category = require('../category/category.model')(sequelize);
     db.Product = require('../product/product.model')(sequelize);
     db.Recipe = require('../recipe/recipe.model')(sequelize);
+    db.RecipeCategory = require('../recipe-category/recipe-category.model')(sequelize);
     db.RecipeProduct = require('../recipe-product/recipe-product.model')(sequelize);
     db.Inventory = require('../inventory/inventory.model')(sequelize);
     db.Order = require('../order/order.model')(sequelize);
     db.OrderRecipe = require('../order-recipe/order-recipe.model')(sequelize);
-
 
     await sequelize.sync();
 }

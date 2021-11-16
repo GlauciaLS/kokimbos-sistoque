@@ -784,7 +784,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTYzMjc5Mzc2NCwiZXhwIjoxNjMzMzk4NTY0fQ.K1LXoZUG20Qy_kXII8fOj2jWHBtXYNxtSdCYGXaCCy0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAzNjU0MSwiZXhwIjoxNjM3NjQxMzQxfQ.LeEb5fDBFxvIEaBVw0ZCfXtUNVMCW1WtQVqUvVYoJLw",
 									"type": "string"
 								}
 							]
@@ -899,6 +899,177 @@
 							],
 							"path": [
 								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria de Receita",
+			"item": [
+				{
+					"name": "Registrar categoria de receita",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAzNjU0MSwiZXhwIjoxNjM3NjQxMzQxfQ.LeEb5fDBFxvIEaBVw0ZCfXtUNVMCW1WtQVqUvVYoJLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"Categoria de receita\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/recipe-categories/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"recipe-categories",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar categorias de receita",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAzNjU0MSwiZXhwIjoxNjM3NjQxMzQxfQ.LeEb5fDBFxvIEaBVw0ZCfXtUNVMCW1WtQVqUvVYoJLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/recipe-categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"recipe-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar categoria de receita pelo ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAzNjU0MSwiZXhwIjoxNjM3NjQxMzQxfQ.LeEb5fDBFxvIEaBVw0ZCfXtUNVMCW1WtQVqUvVYoJLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/recipe-categories/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"recipe-categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar categoria de receita pelo ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAzNjU0MSwiZXhwIjoxNjM3NjQxMzQxfQ.LeEb5fDBFxvIEaBVw0ZCfXtUNVMCW1WtQVqUvVYoJLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"Categoria de receita 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/recipe-categories/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"recipe-categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar categoria de receita pelo ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAzNjU0MSwiZXhwIjoxNjM3NjQxMzQxfQ.LeEb5fDBFxvIEaBVw0ZCfXtUNVMCW1WtQVqUvVYoJLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"Assistente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/recipe-categories/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"recipe-categories",
 								"1"
 							]
 						}
@@ -1298,7 +1469,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"nome\": \"Pizza Calabresa\",\r\n\t\"produtos\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"qtd\": 200\r\n\t\t}\r\n\t]\r\n}",
+							"raw": "{\r\n\t\"categoriaReceita\": 2,\r\n\t\"nome\": \"Pizza Calabresa31213\",\r\n\t\"produtos\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"qtd\": 200\r\n\t\t}\r\n\t]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1326,7 +1497,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyOTM0NiwiZXhwIjoxNjM3NjM0MTQ2fQ.HeUxeVBmK_PTDKHh7eZan-mkL_niGM2FGf4UVEciNtE",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAzNjU0MSwiZXhwIjoxNjM3NjQxMzQxfQ.LeEb5fDBFxvIEaBVw0ZCfXtUNVMCW1WtQVqUvVYoJLw",
 									"type": "string"
 								}
 							]
@@ -1374,6 +1545,35 @@
 					"response": []
 				},
 				{
+					"name": "Consultar receita pelo ID da categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAzNjU0MSwiZXhwIjoxNjM3NjQxMzQxfQ.LeEb5fDBFxvIEaBVw0ZCfXtUNVMCW1WtQVqUvVYoJLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/recipes/category/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"recipes",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Atualizar receita pelo ID",
 					"request": {
 						"auth": {
@@ -1381,7 +1581,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNjMzMTAxNywiZXhwIjoxNjM2OTM1ODE3fQ.ShPSlpYSoepZXt6bFDJmiHlcwNSgUAP3GDQ5hHgd2TI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyOTM0NiwiZXhwIjoxNjM3NjM0MTQ2fQ.HeUxeVBmK_PTDKHh7eZan-mkL_niGM2FGf4UVEciNtE",
 									"type": "string"
 								}
 							]
@@ -1390,7 +1590,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"nome\": \"Pizza CalabresaX\",\r\n\t\"produtos\": [\r\n\t\t{\r\n\t\t\t\"id\": 2,\r\n\t\t\t\"qtd\": 200\r\n\t\t}\r\n\t]\r\n}",
+							"raw": "{\r\n\t\"categoriaReceita\": 2,\r\n\t\"nome\": \"Pizza CalabresaX\",\r\n\t\"produtos\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"qtd\": 200\r\n\t\t}\r\n\t]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1398,13 +1598,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/recipes/1",
+							"raw": "{{host}}/recipes/9",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"recipes",
-								"1"
+								"9"
 							]
 						}
 					},
@@ -1418,7 +1618,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNjMzMTAxNywiZXhwIjoxNjM2OTM1ODE3fQ.ShPSlpYSoepZXt6bFDJmiHlcwNSgUAP3GDQ5hHgd2TI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAzNjU0MSwiZXhwIjoxNjM3NjQxMzQxfQ.LeEb5fDBFxvIEaBVw0ZCfXtUNVMCW1WtQVqUvVYoJLw",
 									"type": "string"
 								}
 							]
@@ -1435,13 +1635,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/recipes/1",
+							"raw": "{{host}}/recipes/8",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"recipes",
-								"1"
+								"8"
 							]
 						}
 					},
