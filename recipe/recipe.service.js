@@ -26,7 +26,6 @@ async function getById(id) {
 }
 
 async function create(payload) {
-    console.log(payload);
     if (await db.Recipe.findOne({ where: { nome: payload.nome } })) {
         throw new Error('Receita já cadastrada!');
     }
