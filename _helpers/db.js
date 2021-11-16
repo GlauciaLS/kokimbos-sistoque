@@ -9,7 +9,10 @@ initialize();
 async function initialize() {
     const { host, port, user, password, database } = config.database;
     const sequelize = new Sequelize(`postgres://${user}:${password}@${host}:${port}/${database}`, {dialect: 'postgres', ssl: true, dialectOptions: {
-      ssl: true
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
     }});
     
     db.User = require('../users/user.model')(sequelize);
