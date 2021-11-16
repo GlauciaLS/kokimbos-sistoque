@@ -22,7 +22,7 @@ function registerSchema(req, res, next) {
 }
 
 function register(req, res, next) {
-    orderService.create(req.body)
+    orderService.create(req.body, req.user.id)
         .then(() => res.json({ message: 'Cadastrado com sucesso!' }))
         .catch(next);
 }
@@ -41,6 +41,7 @@ function getById(req, res, next) {
 
 function updateSchema(req, res, next) {
     const schema = Joi.object({
+        idFuncionario: Joi.number().empty(),
         dataPedido: Joi.string().empty(),
         receitas: Joi.array().empty()
     });
