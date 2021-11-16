@@ -1,9 +1,10 @@
 {
     "database": {
-        "host": "us-cdbr-east-04.cleardb.com",
-        "user": "b7652743ee1be6",
-        "password": "caf59899",
-        "database": "heroku_4bf92ed81342409"
+        "host": "ec2-3-228-134-188.compute-1.amazonaws.com",
+        "port": "5432",
+        "user": "arwchuxnpwovyh",
+        "password": "5bc53dc66d65f91473e0e627c42602cc32b33555730f9fe0396b463869b064f8",
+        "database": "db71l543jk3eln"
     },
     "secret": "KOKIMBOS"
 }
