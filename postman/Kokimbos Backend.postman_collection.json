@@ -16,7 +16,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzMjc5ODE5OCwiZXhwIjoxNjMzNDAyOTk4fQ.I2wJluBPxTin-UftpA3nHZ831kXlP6AjiniugXgcJhc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyNDY5MiwiZXhwIjoxNjM3NjI5NDkyfQ.kK0eqJzTPoxvJgqf8VWoIyjjxkQMwPHpyynGhodRGaM",
 									"type": "string"
 								}
 							]
@@ -33,12 +33,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/users/register",
-							"protocol": "http",
+							"raw": "{{host}}/users/register",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
 								"register"
@@ -50,6 +48,16 @@
 				{
 					"name": "Autenticar usuário",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzMjk2NTk0MCwiZXhwIjoxNjMzNTcwNzQwfQ.CTB8xnjCHrexGkHzwA-o6zbOFLPrNPcBlRSEparlwQ8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -62,12 +70,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/users/authenticate",
-							"protocol": "http",
+							"raw": "{{host}}/users/authenticate",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
 								"authenticate"
@@ -84,7 +90,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzMjk2NTQzMCwiZXhwIjoxNjMzNTcwMjMwfQ.h3II-24cxHpdqWxy9A6SOrrGJhWGTx2v_BpcY5u_C0c",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyNDY5MiwiZXhwIjoxNjM3NjI5NDkyfQ.kK0eqJzTPoxvJgqf8VWoIyjjxkQMwPHpyynGhodRGaM",
 									"type": "string"
 								}
 							]
@@ -92,12 +98,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/users",
-							"protocol": "http",
+							"raw": "{{host}}/users",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"users"
 							]
@@ -113,7 +117,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzMjc5ODE5OCwiZXhwIjoxNjMzNDAyOTk4fQ.I2wJluBPxTin-UftpA3nHZ831kXlP6AjiniugXgcJhc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyNDY5MiwiZXhwIjoxNjM3NjI5NDkyfQ.kK0eqJzTPoxvJgqf8VWoIyjjxkQMwPHpyynGhodRGaM",
 									"type": "string"
 								}
 							]
@@ -121,12 +125,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/users/1",
-							"protocol": "http",
+							"raw": "{{host}}/users/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
 								"1"
@@ -143,7 +145,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTYzMjc5Mzc2NCwiZXhwIjoxNjMzMzk4NTY0fQ.K1LXoZUG20Qy_kXII8fOj2jWHBtXYNxtSdCYGXaCCy0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyNDY5MiwiZXhwIjoxNjM3NjI5NDkyfQ.kK0eqJzTPoxvJgqf8VWoIyjjxkQMwPHpyynGhodRGaM",
 									"type": "string"
 								}
 							]
@@ -151,12 +153,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/users/current",
-							"protocol": "http",
+							"raw": "{{host}}/users/current",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
 								"current"
@@ -173,7 +173,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTYzMjc5NTE3OCwiZXhwIjoxNjMzMzk5OTc4fQ.4hXGCYzt6kCuC9N5tIR0jhRtzGoL8sZsxeujk_L3mQY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyMzEzNCwiZXhwIjoxNjM3NjI3OTM0fQ.D6ZMluxj0WUIubfHk6OMBn7JffeKCJdSBYjqrVhyNBA",
 									"type": "string"
 								}
 							]
@@ -182,7 +182,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"nome\": \"Glaucia\",\r\n\t\"cargo\": \"Desenvolvedora\",\r\n\t\"dataNascimento\": \"01/03/2001\",\r\n\t\"cpf\": \"333.111.111-11\",\r\n\t\"rg\": \"66.3222.222-2\",\r\n\t\"telefone\": \"3222-4556\",\r\n\t\"tipoUsuario\": 2,\r\n\t\"login\": \"g\",\r\n\t\"senha\": \"glau3443\"\r\n}",
+							"raw": "{\r\n\t\"nome\": \"Glaucia\",\r\n\t\"cargo\": \"Desenvolvedora\",\r\n\t\"dataNascimento\": \"01/03/2001\",\r\n\t\"cpf\": \"3433.111.111-11\",\r\n\t\"rg\": \"66.32422.222-2\",\r\n\t\"telefone\": \"3222-4556\",\r\n\t\"tipoUsuario\": 2,\r\n\t\"login\": \"admin\",\r\n\t\"senha\": \"admin123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -190,15 +190,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/users/3",
-							"protocol": "http",
+							"raw": "{{host}}/users/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -220,12 +218,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/users/1",
-							"protocol": "http",
+							"raw": "{{host}}/users/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
 								"1"
@@ -247,7 +243,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzMjc5ODE5OCwiZXhwIjoxNjMzNDAyOTk4fQ.I2wJluBPxTin-UftpA3nHZ831kXlP6AjiniugXgcJhc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzMjk2NTk0MCwiZXhwIjoxNjMzNTcwNzQwfQ.CTB8xnjCHrexGkHzwA-o6zbOFLPrNPcBlRSEparlwQ8",
 									"type": "string"
 								}
 							]
@@ -264,12 +260,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/type-users/register",
-							"protocol": "http",
+							"raw": "{{host}}/type-users/register",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"type-users",
 								"register"
@@ -286,7 +280,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzMjc5ODE5OCwiZXhwIjoxNjMzNDAyOTk4fQ.I2wJluBPxTin-UftpA3nHZ831kXlP6AjiniugXgcJhc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyNDY5MiwiZXhwIjoxNjM3NjI5NDkyfQ.kK0eqJzTPoxvJgqf8VWoIyjjxkQMwPHpyynGhodRGaM",
 									"type": "string"
 								}
 							]
@@ -294,12 +288,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/type-users",
-							"protocol": "http",
+							"raw": "{{host}}/type-users",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"type-users"
 							]
@@ -315,7 +307,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzMjc5ODE5OCwiZXhwIjoxNjMzNDAyOTk4fQ.I2wJluBPxTin-UftpA3nHZ831kXlP6AjiniugXgcJhc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyNDY5MiwiZXhwIjoxNjM3NjI5NDkyfQ.kK0eqJzTPoxvJgqf8VWoIyjjxkQMwPHpyynGhodRGaM",
 									"type": "string"
 								}
 							]
@@ -323,12 +315,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/type-users/1",
-							"protocol": "http",
+							"raw": "{{host}}/type-users/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"type-users",
 								"1"
@@ -345,7 +335,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTYzMjc5Mzc2NCwiZXhwIjoxNjMzMzk4NTY0fQ.K1LXoZUG20Qy_kXII8fOj2jWHBtXYNxtSdCYGXaCCy0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzNzAyNDY5MiwiZXhwIjoxNjM3NjI5NDkyfQ.kK0eqJzTPoxvJgqf8VWoIyjjxkQMwPHpyynGhodRGaM",
 									"type": "string"
 								}
 							]
@@ -362,12 +352,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/type-users/1",
-							"protocol": "http",
+							"raw": "{{host}}/type-users/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"type-users",
 								"1"
@@ -401,12 +389,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/type-users/1",
-							"protocol": "http",
+							"raw": "{{host}}/type-users/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"type-users",
 								"1"
@@ -445,12 +431,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/providers/register",
-							"protocol": "http",
+							"raw": "{{host}}/providers/register",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"providers",
 								"register"
@@ -475,12 +459,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/providers",
-							"protocol": "http",
+							"raw": "{{host}}/providers",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"providers"
 							]
@@ -504,12 +486,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/providers/2",
-							"protocol": "http",
+							"raw": "{{host}}/providers/2",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"providers",
 								"2"
@@ -543,12 +523,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/providers/2",
-							"protocol": "http",
+							"raw": "{{host}}/providers/2",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"providers",
 								"2"
@@ -573,12 +551,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/providers/1",
-							"protocol": "http",
+							"raw": "{{host}}/providers/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"providers",
 								"1"
@@ -617,12 +593,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/representatives/register",
-							"protocol": "http",
+							"raw": "{{host}}/representatives/register",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"representatives",
 								"register"
@@ -647,12 +621,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/representatives",
-							"protocol": "http",
+							"raw": "{{host}}/representatives",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"representatives"
 							]
@@ -676,12 +648,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/representatives/1",
-							"protocol": "http",
+							"raw": "{{host}}/representatives/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"representatives",
 								"1"
@@ -715,12 +685,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/representatives/1",
-							"protocol": "http",
+							"raw": "{{host}}/representatives/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"representatives",
 								"1"
@@ -754,12 +722,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/representatives/1",
-							"protocol": "http",
+							"raw": "{{host}}/representatives/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"representatives",
 								"1"
@@ -798,12 +764,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/categories/register",
-							"protocol": "http",
+							"raw": "{{host}}/categories/register",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"categories",
 								"register"
@@ -828,12 +792,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/categories",
-							"protocol": "http",
+							"raw": "{{host}}/categories",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"categories"
 							]
@@ -857,12 +819,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/categories/1",
-							"protocol": "http",
+							"raw": "{{host}}/categories/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"categories",
 								"1"
@@ -896,12 +856,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/categories/2",
-							"protocol": "http",
+							"raw": "{{host}}/categories/2",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"categories",
 								"2"
@@ -935,14 +893,183 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/categories/1",
-							"protocol": "http",
+							"raw": "{{host}}/categories/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Registrar pedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYzMjk1MjM5MiwiZXhwIjoxNjMzNTU3MTkyfQ.iut3zpLksgQR7JfnDN12KBIR2kmwrgI5EceHUR8StpA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"dataPedido\": \"08/11/2021\",\r\n\t\"receitas\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"qtd\": 2\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/orders/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar pedidos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTYzMjc5Mzc2NCwiZXhwIjoxNjMzMzk4NTY0fQ.K1LXoZUG20Qy_kXII8fOj2jWHBtXYNxtSdCYGXaCCy0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar pedido pelo ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTYzMjc5Mzc2NCwiZXhwIjoxNjMzMzk4NTY0fQ.K1LXoZUG20Qy_kXII8fOj2jWHBtXYNxtSdCYGXaCCy0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/orders/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar pedido pelo ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTYzMjc5Mzc2NCwiZXhwIjoxNjMzMzk4NTY0fQ.K1LXoZUG20Qy_kXII8fOj2jWHBtXYNxtSdCYGXaCCy0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"Fruta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/orders/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar pedido pelo ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTYzMjc5Mzc2NCwiZXhwIjoxNjMzMzk4NTY0fQ.K1LXoZUG20Qy_kXII8fOj2jWHBtXYNxtSdCYGXaCCy0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"Assistente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/orders/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders",
 								"1"
 							]
 						}
@@ -979,12 +1106,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/inventories/register",
-							"protocol": "http",
+							"raw": "{{host}}/inventories/register",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"inventories",
 								"register"
@@ -1009,12 +1134,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/inventories",
-							"protocol": "http",
+							"raw": "{{host}}/inventories",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"inventories"
 							]
@@ -1038,12 +1161,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/inventories/1",
-							"protocol": "http",
+							"raw": "{{host}}/inventories/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"inventories",
 								"1"
@@ -1068,12 +1189,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/inventories/product/1",
-							"protocol": "http",
+							"raw": "{{host}}/inventories/product/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"inventories",
 								"product",
@@ -1108,12 +1227,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/inventories/1",
-							"protocol": "http",
+							"raw": "{{host}}/inventories/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"inventories",
 								"1"
@@ -1147,12 +1264,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/inventories/2",
-							"protocol": "http",
+							"raw": "{{host}}/inventories/2",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"inventories",
 								"2"
@@ -1191,12 +1306,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/recipes/register",
-							"protocol": "http",
+							"raw": "{{host}}/recipes/register",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"recipes",
 								"register"
@@ -1221,12 +1334,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/recipes",
-							"protocol": "http",
+							"raw": "{{host}}/recipes",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"recipes"
 							]
@@ -1250,12 +1361,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/recipes/1",
-							"protocol": "http",
+							"raw": "{{host}}/recipes/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"recipes",
 								"1"
@@ -1289,12 +1398,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/recipes/1",
-							"protocol": "http",
+							"raw": "{{host}}/recipes/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"recipes",
 								"1"
@@ -1328,12 +1435,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/recipes/1",
-							"protocol": "http",
+							"raw": "{{host}}/recipes/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"recipes",
 								"1"
@@ -1372,12 +1477,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/products/register",
-							"protocol": "http",
+							"raw": "{{host}}/products/register",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"products",
 								"register"
@@ -1402,12 +1505,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/products",
-							"protocol": "http",
+							"raw": "{{host}}/products",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"products"
 							]
@@ -1431,12 +1532,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/products/1",
-							"protocol": "http",
+							"raw": "{{host}}/products/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"products",
 								"1"
@@ -1470,12 +1569,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/products/2",
-							"protocol": "http",
+							"raw": "{{host}}/products/2",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"products",
 								"2"
@@ -1509,12 +1606,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/products/1",
-							"protocol": "http",
+							"raw": "{{host}}/products/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "4000",
 							"path": [
 								"products",
 								"1"
@@ -1524,6 +1619,29 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
