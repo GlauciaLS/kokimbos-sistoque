@@ -1,10 +1,10 @@
-﻿{
+{
     "database": {
-        "host": "localhost",
-        "port": 3306,
-        "user": "root",
-        "password": "1234",
-        "database": "kokimbosbackend"
+        "host": "ec2-3-228-134-188.compute-1.amazonaws.com",
+        "port": "5432",
+        "user": "arwchuxnpwovyh",
+        "password": "5bc53dc66d65f91473e0e627c42602cc32b33555730f9fe0396b463869b064f8",
+        "database": "db71l543jk3eln"
     },
-    "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
+    "secret": "KOKIMBOS"
 }
