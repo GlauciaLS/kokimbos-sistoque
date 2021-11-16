@@ -8,7 +8,12 @@ initialize();
 
 async function initialize() {
     const { host, port, user, password, database } = config.database;
-    const connection = await mysql.createConnection({ host, port, user, password });
+    const connection = await mysql.createConnection({ 
+        host: 'us-cdbr-east-04.cleardb.com', 
+        user: 'b7652743ee1be6',
+        password: 'caf59899',
+        database: 'heroku_4bf92ed81342409'
+    });
     await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
 
     const sequelize = new Sequelize(database, user, password, { dialect: 'mysql' });
