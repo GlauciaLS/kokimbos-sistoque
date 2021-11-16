@@ -22,13 +22,13 @@ async function create(payload) {
         throw new Error('Produto já cadastrado!');
     }  
 
-    const unvalidCategory = await categoryExists(payload.categoria);
-    if(unvalidCategory) {
+    const validCategory = await categoryExists(payload.categoria);
+    if(!validCategory) {
         throw new Error('Categoria não existe!');
     }
 
-    const unvalidProvider = await providerExists(payload.fornecedor);
-    if(unvalidProvider) {
+    const validProvider = await providerExists(payload.fornecedor);
+    if(!validProvider) {
         throw new Error('Fornecedor não existe!');
     }
 
