@@ -7,7 +7,10 @@ initialize();
 
 async function initialize() {
     const { host, port, user, password, database } = config.database;
-    const sequelize = new Sequelize(`postgres://${process.env.USER || user}:${process.env.PASSWORD || password}@${process.env.HOST || host}:${process.env.PORT || port}/${process.env.DATABASE || database}`, {dialect: 'postgres', ssl: true, dialectOptions: {
+
+    const connectionString = (process.env.DATABASE_URL ? process.env.DATABASE_URL : `postgres://${user}:${password}@${host}:${port}/${database}`);
+
+    const sequelize = new Sequelize(connectionString, {dialect: 'postgres', ssl: true, dialectOptions: {
         ssl: {
           require: true,
           rejectUnauthorized: false
