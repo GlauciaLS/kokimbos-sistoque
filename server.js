@@ -19,6 +19,7 @@ app.use('/recipes', require('./recipe/recipes.controller'))
 app.use('/recipe-categories', require('./recipe-category/recipe-categories.controller'))
 app.use('/inventories', require('./inventory/inventories.controller'))
 app.use('/orders', require('./order/orders.controller'))
+app.use('/', require('./healthcheck/healthcheck.controller'))
 
 app.use(errorHandler);
 
