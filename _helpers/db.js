@@ -7,12 +7,21 @@ initialize();
 
 async function initialize() {
     const { host, port, user, password, database } = config.database;
-    const sequelize = new Sequelize(`postgres://${user}:${password}@${host}:${port}/${database}`, {dialect: 'postgres', ssl: true, dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }});
+
+    const sequelize = new Sequelize(`postgres://
+        ${process.env.USER || user}:
+        ${process.env.PASSWORD || password}@
+        ${process.env.HOST || host}:
+        ${process.env.PORT || port}/
+        ${process.env.DATABASE || database}`, 
+        {dialect: 'postgres', ssl: true, dialectOptions: 
+        {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
+        }}
+    );
     
     db.User = require('../users/user.model')(sequelize);
     db.TypeUser = require('../typeUser/typeUser.model')(sequelize);
