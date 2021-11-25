@@ -9,13 +9,11 @@ async function initialize() {
     const { host, port, user, password, database } = config.database;
 
     const connectionString = (process.env.DATABASE_URL ? process.env.DATABASE_URL : `postgres://${user}:${password}@${host}:${port}/${database}`);
+    const connectionConfig = (process.env.NODE_ENV && process.env.NODE_ENV === "production") 
+                                ? ({dialect: 'postgres', ssl: true, dialectOptions: { ssl: { require: true, rejectUnauthorized: false } }})
+                                : {dialect: 'postgres'};
 
-    const sequelize = new Sequelize(connectionString, {dialect: 'postgres', ssl: true, dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false
-        }
-      }});
+    const sequelize = new Sequelize(connectionString, connectionConfig);
     
     db.User = require('../users/user.model')(sequelize);
     db.TypeUser = require('../typeUser/typeUser.model')(sequelize);
